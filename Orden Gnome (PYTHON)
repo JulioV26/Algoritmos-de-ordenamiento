@@ -9,3 +9,5 @@ def Gnome_sort(vector):
             if i_b == 0:
                 i_b,i_i = i_i, i_i+1
     return vector
+arreglo = [5,8,0,1,10,15,20,19,46,28,25]
+print(Gnome_sort(arreglo))
