@@ -1,0 +1,30 @@
+<?php
+    function OrdenShell($a,$n)
+    {
+        for ($inc = 1; $inc<$n; $inc = $inc*3+1);
+            while ($inc > 0)
+            {
+                for ($i = $inc; $i < $n; $i++)
+                {
+                    $j = $i;
+                    $temp = $a[$i];
+                    while (($j >= $inc) && ($a[$j - $inc] > $temp))
+                    {
+                        $a[$j] = $a[$j - $inc];
+                        $j = $j - $inc;
+                    }
+                    $a[$j] = $temp;
+                }
+                $inc = $inc / 2;
+            }
+            return $a;
+    }
+    function main($vectorA)
+    {
+        $vectorB = OrdenShell($vectorA,sizeof($vectorA));
+        for ($i = 0; $i < sizeof($vectorB); $i++)
+            echo $vectorB[$i]."\n";
+    }
+    $arreglo = array(20,50,30);
+    main($arreglo);
+?>
